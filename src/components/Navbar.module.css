@@ -1,0 +1,29 @@
+.nav{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    justify-items: center;
+  background-color: rgb(255, 255, 255);
+}
+.logo{
+    height:100px;
+    width: auto;
+}
+.link{display: flex;
+    justify-content: center;
+  align-items: center;
+    padding:10px;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+     justify-content: center;
+}
+.navigation{
+    display: inline-flex;
+}
+.picture{
+    height: 40%;
+    margin: auto;
+    width: auto;
+    border-radius: 50px;
+}

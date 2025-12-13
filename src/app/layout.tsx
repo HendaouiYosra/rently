@@ -1,0 +1,23 @@
+
+import { Auth0Provider } from "@auth0/nextjs-auth0";
+import "./globals.css";
+
+
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={` antialiased`}
+      >
+        <Auth0Provider>
+          {children}
+        </Auth0Provider>
+      </body>
+    </html>
+  );
+}
