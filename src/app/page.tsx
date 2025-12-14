@@ -18,7 +18,7 @@ export default async function Home() {
    
     <div className="app-container">
        <Navbar/>
-      <div className="w-full" >
+      <div className="w-full h-full" >
         
         
           {user ? (

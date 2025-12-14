@@ -1,0 +1,88 @@
+/* Card */
+.bookCard {
+  background: rgb(202, 202, 202);
+  color: var(--text-primary);
+  border-radius: 18px;
+  padding: 18px;
+  width: 300px;
+  height: 560px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  box-shadow: var(--card-shadow);
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* Hover magic */
+.bookCard:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Image wrapper for elegant crop */
+.imageWrapper {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #00000010;
+}
+
+/* Book image */
+.bookCover {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Image zoom on hover */
+.bookCard:hover .bookCover {
+  transform: scale(1.05);
+}
+
+/* Title */
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+/* Author */
+.author {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ========================= */
+/* 🌙 DARK MODE VARIABLES */
+/* ========================= */
+
+:root {
+  --card-bg: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666;
+
+  --card-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.12);
+  --card-shadow-hover:
+    0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: #111216;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a1a1a1;
+
+    --card-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.6);
+    --card-shadow-hover:
+      0 25px 60px rgba(0, 0, 0, 0.9);
+  }
+}

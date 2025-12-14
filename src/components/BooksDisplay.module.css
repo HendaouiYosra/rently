@@ -1,21 +1,59 @@
 .holder {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 24px;
-  
- width: 100%;
-  max-height: 80vh;      /* area that scrolls */
-  overflow-y: auto;      /* vertical scroll */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 40px;
 
-  padding: 60px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  padding: 64px 80px;
+
+  /* Smooth scrolling feel */
+  scroll-behavior: smooth;
+
+
+
+  /* Center grid nicely on wide screens */
+  justify-items: center;
 }
 
-.bookCard{
-    padding: 20px;
-    width: 300px;
-    height: 600px;
+/* Hide harsh scrollbar but keep functionality */
+.holder::-webkit-scrollbar {
+  width: 8px;
 }
-.bookCover{
-    width: 300px;
-    height: 400px;
+
+.holder::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.holder::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 10px;
+}
+
+.holder::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.45);
+}
+
+/* ========================= */
+/* 🌙 DARK MODE SUPPORT */
+/* ========================= */
+
+:root {
+  --holder-bg: linear-gradient(
+    180deg,
+    #fafafa 0%,
+    #f3f3f3 100%
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --holder-bg: linear-gradient(
+      180deg,
+      #0c0d10 0%,
+      #121318 100%
+    );
+  }
 }

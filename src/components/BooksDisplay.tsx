@@ -1,29 +1,23 @@
 type book={
-    id : string,
+    key : string,
     title:string
     image: string,
-    author: string,
-    rating: number,
-    
+    author: string[],
+    cover: number,
 
 }
+
 import styles from "@/components/BooksDisplay.module.css"
+import BookCard from "./BookCard";
 export default async function Books(){
- const response = await fetch(`https://api.bigbookapi.com/search-books?api-key=${process.env.BOOK_API_KEY}&query=romance`);
-console.log(`https://api.bigbookapi.com/search-books?api-key=${process.env.BOOK_API_KEY}&query=romance`)
-const data=await response.json();
-const books = data.books.flat();
+ const response = await fetch(`https://openlibrary.org/search.json?q=Romance`);
+ const data=await response.json();
+const books = data.docs.flat();
 console.log(books)
 return(
     <div className={styles.holder}>
-        {books?.map((book)=> (<div key={book.id} className={styles.bookCard}>
-            <img className={styles.bookCover} src={book.image} ></img>
+        {books?.map((book)=> <BookCard key={book.key} book={book}/>)}
 
-            <h1>{book.title}</h1>
-            
-            <h3> {book.rating.average}</h3>
-        </div>))}
-        
     </div>
 )
 }
