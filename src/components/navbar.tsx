@@ -23,7 +23,7 @@ return(<div className={styles.nav}>
     <a className={styles.link} href=""> about us</a>
 
     <DropdownMenu>
-  <DropdownMenuTrigger>    <img className={styles.picture} src={user?.picture} alt="" /></DropdownMenuTrigger>
+  <DropdownMenuTrigger>    <img className={styles.picture} src={user?.picture} alt="My Account"  /></DropdownMenuTrigger>
   <DropdownMenuContent>
     <DropdownMenuLabel>My Account</DropdownMenuLabel>
     <DropdownMenuSeparator />
@@ -33,6 +33,7 @@ return(<div className={styles.nav}>
     <DropdownMenuItem> <a href="/auth/logout" className="text-red-600">logout</a></DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
+
   </div>
 
 </div>)

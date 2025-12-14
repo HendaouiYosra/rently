@@ -1,0 +1,21 @@
+.holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  
+ width: 100%;
+  max-height: 80vh;      /* area that scrolls */
+  overflow-y: auto;      /* vertical scroll */
+
+  padding: 60px;
+}
+
+.bookCard{
+    padding: 20px;
+    width: 300px;
+    height: 600px;
+}
+.bookCover{
+    width: 300px;
+    height: 400px;
+}

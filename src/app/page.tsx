@@ -1,3 +1,4 @@
+import Books from "@/components/BooksDisplay";
 import { auth0 } from "../lib/auth0";
 import LoginButton from "@/components/LoginButton";
 import LogoutButton from "@/components/LogoutButton";
@@ -17,12 +18,12 @@ export default async function Home() {
    
     <div className="app-container">
        <Navbar/>
-      <div >
+      <div className="w-full" >
         
         
           {user ? (
             <div className="logged-in-section">
-              
+              <Books/>
             </div>
           ) : (
             <>
