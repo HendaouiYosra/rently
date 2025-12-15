@@ -1,4 +1,4 @@
-import styles from "@/components/BookCard.module.css";
+import styles from "@/components/book/BookCard.module.css"
 
 export default function BookCard({ book }) {
   return (

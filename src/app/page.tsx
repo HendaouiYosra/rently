@@ -1,8 +1,8 @@
-import Books from "@/components/BooksDisplay";
+import Books from "@/components/book/BooksDisplay";
 import { auth0 } from "../lib/auth0";
 import LoginButton from "@/components/LoginButton";
 import LogoutButton from "@/components/LogoutButton";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar/navbar"
 import Profile from "@/components/Profile";
 import { redirect } from "next/navigation";
 

@@ -7,8 +7,8 @@ type book={
 
 }
 
-import styles from "@/components/BooksDisplay.module.css"
-import BookCard from "./BookCard";
+import styles from "@/components/book/BooksDisplay.module.css"
+import BookCard from "@/components/book/BookCard"
 export default async function Books(){
  const response = await fetch(`https://openlibrary.org/search.json?q=Romance`);
  const data=await response.json();

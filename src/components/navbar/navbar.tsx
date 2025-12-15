@@ -9,8 +9,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import LogoutButton from "./LogoutButton"
+} from "@/components/navbar/dropdown-menu"
+
 export default function Navbar(){
     const {user}=useUser();
 return(<div className={styles.nav}>
