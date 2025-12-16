@@ -14,8 +14,10 @@ export default async function Books(){
  const data=await response.json();
 const books = data.docs.flat();
 console.log(books)
-return(
+return( 
+
     <div className={styles.holder}>
+        
         {books?.map((book)=> <BookCard key={book.key} book={book}/>)}
 
     </div>

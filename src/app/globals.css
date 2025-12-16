@@ -13,7 +13,14 @@ body {
   color: #000000;
   overflow: hidden;
 }
-
+.title {
+  margin: 0;
+  font-size: 58px;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+}
 .app-container {
  
  

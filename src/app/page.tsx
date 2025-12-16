@@ -5,6 +5,7 @@ import LogoutButton from "@/components/LogoutButton";
 import Navbar from "@/components/navbar/navbar"
 import Profile from "@/components/Profile";
 import { redirect } from "next/navigation";
+import { Suspense } from "react";
 
 
 export default async function Home() {
@@ -23,7 +24,8 @@ export default async function Home() {
         
           {user ? (
             <div className="logged-in-section">
-              <Books/>
+            <Suspense fallback={<p className="flex items-center justify-center min-h-screen text-white">Loading ...</p>}><Books/></Suspense>
+              
             </div>
           ) : (
             <>
