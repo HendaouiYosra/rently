@@ -1,0 +1,29 @@
+.list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+
+  /* horizontal scroll only */
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  
+  padding: 16px;                 
+  min-height:480px;
+
+  align-items: flex-start;
+  box-sizing: border-box;
+
+  -webkit-overflow-scrolling: touch;
+
+  /* hide scrollbar */
+  scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.list > * {
+  flex: 0 0 auto;
+}

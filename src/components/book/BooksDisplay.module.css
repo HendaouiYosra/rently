@@ -1,67 +1,110 @@
 .holder {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 40px;
 
-  width: 100%;
-  max-height: 80vh;
-  overflow-y: auto;
+  height: 100vh;        /* real height */
+  overflow-y: auto;     /* vertical scroll */
+  overflow-x: hidden;
 
-  padding: 64px 80px;
+  padding: 24px;
+  box-sizing: border-box;
+    scrollbar-width: none;
 
-  /* Smooth scrolling feel */
-  scroll-behavior: smooth;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
-
-
-  /* Center grid nicely on wide screens */
-  justify-items: center;
+  gap: 10px;
+  padding: 18px 12px 6px;
 }
 
-/* Hide harsh scrollbar but keep functionality */
-.holder::-webkit-scrollbar {
-  width: 8px;
-}
-
-.holder::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.holder::-webkit-scrollbar-thumb {
-  background: rgba(150, 150, 150, 0.25);
-  border-radius: 10px;
-}
-
-.holder::-webkit-scrollbar-thumb:hover {
-  background: rgba(150, 150, 150, 0.45);
-}
-
-.title {
+.heroTitle {
   margin: 0;
-  font-size: 58px;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  font-size: clamp(28px, 4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: #fff;
   text-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
 }
-/* ========================= */
-/* 🌙 DARK MODE SUPPORT */
-/* ========================= */
 
-:root {
-  --holder-bg: linear-gradient(
-    180deg,
-    #fafafa 0%,
-    #f3f3f3 100%
-  );
+.heroSubtitle {
+  margin: 0;
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: rgba(255, 255, 255, 0.8);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --holder-bg: linear-gradient(
-      180deg,
-      #0c0d10 0%,
-      #121318 100%
-    );
-  }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.tag {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.rowTitle {
+  margin: 0;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Optional: each category block wrapper (if your BookCategory returns a <div>) */
+.categoryBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Optional: category title style (if you render a title) */
+.rowTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #fff;
+  opacity: 0.95;
+}
+
+/* This is the key for the horizontal list layout */
+.rowScroll {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  /* THIS fixes “first card cut” + keeps right edge clean */
+  padding: 8px 16px;
+  scroll-padding-left: 16px;
+  scroll-padding-right: 16px;
+
+  /* nice feel */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.rowScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure BookCard doesn’t shrink (prevents weird cutting) */
+.rowScroll > * {
+  flex: 0 0 auto;
 }

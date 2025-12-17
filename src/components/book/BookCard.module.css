@@ -5,7 +5,7 @@
   border-radius: 18px;
   padding: 18px;
   width: 300px;
-  height: 560px;
+  height: 460px;
 
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@
 /* Book image */
 .bookCover {
   width: 100%;
-  height: 380px;
+  height: 340px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
