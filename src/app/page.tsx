@@ -6,10 +6,12 @@ import Navbar from "@/components/navbar/navbar"
 import Profile from "@/components/Profile";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
+import BookSearch from "@/components/book/BookSearch";
 
 
-export default async function Home() {
-  
+export default async function Home({searchParams}:{searchParams:{q: string}}) {
+  const {q}=await searchParams;
+  console.log(q)
   const session = await auth0.getSession();
   const user = session?.user;
  if (!session) {
@@ -22,9 +24,11 @@ export default async function Home() {
       <div className="flex-1 min-h-0 overflow-y-auto" >
         
         
-          {user ? (
+          {user ? ( 
             <div className="logged-in-section">
-            <Suspense fallback={<p className="flex items-center justify-center min-h-screen text-white">Loading ...</p>}><Books/></Suspense>
+
+              {q?(<BookSearch query={q}></BookSearch>):( <Suspense fallback={<p className="flex items-center justify-center min-h-screen text-white">Loading ...</p>}><Books/></Suspense>)}
+           
               
             </div>
           ) : (

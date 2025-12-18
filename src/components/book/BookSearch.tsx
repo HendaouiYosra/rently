@@ -1,14 +1,22 @@
-const categories = ["horror", "romance", "fiction", "science","Space"];
+type Book = {
+    key: string;
+  title: string;
+  author_name: string;
+  first_publish_year: string;
+  languages: string[];
+};
 
+import BookCard from "./BookCard";
 import styles from "@/components/book/BooksDisplay.module.css"
-import BookCard from "@/components/book/BookCard"
-import BookCategory from "./BookCategoryList";
-import SearchBar from "../SearchBar/SearchBar";
-export default async function Books(){
+import SearchBar from "../SearchBar/SearchBar"
+export default async function BookSearch({query}){
 
+const response= fetch(`https://openlibrary.org/search.json?q=${query}`);
+const data = (await response).json()
 
-return(
-
+    const  books :Book[] = data.docs.flat();
+    return(
+  
   <div className={styles.holder}>
   <div className={styles.hero}>
     <h1 className={styles.heroTitle}>Browse Our Collection</h1>
@@ -24,14 +32,9 @@ return(
     </div>
     <SearchBar></SearchBar>
   </div>
-
-{categories.map((category)=>( <div key={categories.indexOf(category)}><h2 className={styles.rowTitle}>{category}</h2>
-  <BookCategory key={category} category={category} /> </div>))}
-
-
-
+<div className={styles.list}> 
+{books?.map((book)=> <BookCard key={book.key} book={book}/>)}
 </div>
+ </div>)}
 
-   
-)
-}
+
