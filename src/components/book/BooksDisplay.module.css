@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 40px;
 
-  height: 100vh;        /* real height */
+  height: 90vh;        /* real height */
   overflow-y: auto;     /* vertical scroll */
   overflow-x: hidden;
 

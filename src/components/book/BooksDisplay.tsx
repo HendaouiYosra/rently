@@ -1,20 +1,10 @@
-type book={
-    key : string,
-    title:string
-    image: string,
-    author: string[],
-    cover: number,
-
-}
+const categories = ["horror", "romance", "fiction", "science","Space"];
 
 import styles from "@/components/book/BooksDisplay.module.css"
 import BookCard from "@/components/book/BookCard"
 import BookCategory from "./BookCategoryList";
-export default async function Books(){
- const response = await fetch(`https://openlibrary.org/search.json?q=Romance`);
- const data=await response.json();
-const books = data.docs.flat();
-console.log(books)
+export default function Books(){
+
 return(
 
   <div className={styles.holder}>
@@ -32,17 +22,11 @@ return(
     </div>
   </div>
 
-  <h2 className={styles.rowTitle}>Horror</h2>
-  <BookCategory key={"horror"} category={"horror"} />
+{categories.map((category)=>( <div key={categories.indexOf(category)}><h2 className={styles.rowTitle}>{category}</h2>
+  <BookCategory key={category} category={category} /> </div>))}
 
-  <h2 className={styles.rowTitle}>Romance</h2>
-  <BookCategory key={"romance"} category={"romance"} />
 
-  <h2 className={styles.rowTitle}>Fiction</h2>
-  <BookCategory key={"Fiction"} category={"Fiction"} />
 
-  <h2 className={styles.rowTitle}>Science</h2>
-  <BookCategory key={"Science"} category={"Science"} />
 </div>
 
    

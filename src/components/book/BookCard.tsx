@@ -1,3 +1,5 @@
+
+
 import styles from "@/components/book/BookCard.module.css"
 import Link from "next/link";
 
@@ -18,6 +20,24 @@ export default function BookCard({ book }) {
 
       <h2 className={styles.title}>{book.title}</h2>
       <p className={styles.author}>{book.author_name?.[0]}</p>
+      <p className={`${styles.author} ${styles.year}`}>
+  {book.first_publish_year}
+</p>
+
+
+    <div className={styles.languages}>
+  {book.language.slice(0, 3).map((language) => (
+    <span key={language} className={styles.languageTag}>
+      {language.toUpperCase()}
+    </span>
+  ))}
+  {book.language.length > 3 && (
+    <span className={styles.languageMore}>
+      +{book.language.length - 3}
+    </span>
+  )}
+</div>
+
     </div></Link>
   );
 }

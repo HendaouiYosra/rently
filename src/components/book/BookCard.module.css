@@ -58,6 +58,44 @@
   color: var(--text-secondary);
 }
 
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+height: fit-content;
+  max-height: 44px; /* prevents overflow */
+  
+    align-items: center;
+}
+
+.languageTag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 999px;
+ background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border: #00000010 solid 1px;
+}
+
+.languageMore {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text-primary);
+}
+.year {
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.75;
+  margin-top: -2px;
+}
+
+
 /* ========================= */
 /* 🌙 DARK MODE VARIABLES */
 /* ========================= */

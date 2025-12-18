@@ -19,7 +19,7 @@ export default async function Home() {
    
     <div className="app-container">
        <Navbar/>
-      <div className="w-full h-full" >
+      <div className="flex-1 min-h-0 overflow-y-auto" >
         
         
           {user ? (
