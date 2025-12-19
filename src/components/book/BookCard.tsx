@@ -26,12 +26,12 @@ export default function BookCard({ book }) {
 
 
     <div className={styles.languages}>
-  {book.language.slice(0, 3).map((language) => (
+  {book.language?.slice(0, 3)?.map((language) => (
     <span key={language} className={styles.languageTag}>
       {language.toUpperCase()}
     </span>
   ))}
-  {book.language.length > 3 && (
+  {book.language?.length > 3 && (
     <span className={styles.languageMore}>
       +{book.language.length - 3}
     </span>

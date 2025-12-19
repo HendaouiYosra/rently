@@ -7,6 +7,7 @@ import Profile from "@/components/Profile";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import BookSearch from "@/components/book/BookSearch";
+import HeaderSearch from "@/components/book/HeaderSearch";
 
 
 export default async function Home({searchParams}:{searchParams:{q: string}}) {
@@ -26,7 +27,7 @@ export default async function Home({searchParams}:{searchParams:{q: string}}) {
         
           {user ? ( 
             <div className="logged-in-section">
-
+ <HeaderSearch></HeaderSearch>
               {q?(<BookSearch query={q}></BookSearch>):( <Suspense fallback={<p className="flex items-center justify-center min-h-screen text-white">Loading ...</p>}><Books/></Suspense>)}
            
               
