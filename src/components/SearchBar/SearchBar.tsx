@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function SearchBar(){
     const [query, setQuery]=useState("");
   const router = useRouter();
- function onSubmit(e){
+ function handleSubmit(e){
          e.preventDefault();
         const q = query.trim();
         console.log("queryyyyy",q);
@@ -13,7 +13,7 @@ export default function SearchBar(){
     
     }
     return(
- <form onSubmit={onSubmit} >   
+ <form onSubmit={handleSubmit} >   
     <input value={query} onChange={(e)=> setQuery(e.target.value)}></input>
 <button type="submit" className="rounded-xl px-4 py-2 bg-white/10 text-white" > validate</button>
 

@@ -1,0 +1,136 @@
+/* ===== Page background ===== */
+.holder {
+  height: 100vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(900px 600px at 55% 35%, rgba(29, 115, 219, 0.18), transparent 60%),
+    radial-gradient(700px 500px at 65% 55%, rgba(229, 9, 20, 0.10), transparent 60%),
+    linear-gradient(180deg, #050507, #0b0b12);
+  color: #eaeaf0;
+  padding: 20px;
+}
+
+/* ===== Messages container ===== */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 6px 4px 18px;
+}
+
+/* Scrollbar (subtle, premium) */
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+.messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+.messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ===== User message ===== */
+.userMessage {
+  align-self: flex-end;
+  max-width: 72%;
+  padding: 12px 16px;
+  border-radius: 18px 18px 4px 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(29, 115, 219, 0.38),
+    rgba(29, 115, 219, 0.20)
+  );
+  border: 1px solid rgba(29, 115, 219, 0.35);
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 10px 30px rgba(29, 115, 219, 0.22);
+  animation: fadeIn 160ms ease-out;
+}
+
+/* ===== Assistant message ===== */
+.assistantMessage {
+  align-self: flex-start;
+  max-width: 72%;
+  padding: 12px 16px;
+  border-radius: 18px 18px 18px 4px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #eaeaf0;
+  font-size: 14px;
+  line-height: 1.4;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 160ms ease-out;
+}
+
+/* Small entrance animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Input form ===== */
+.form {
+  display: flex;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Input */
+.input {
+  flex: 1;
+  height: 46px;
+  padding: 0 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.input:focus {
+  border-color: rgba(29, 115, 219, 0.6);
+  box-shadow: 0 0 0 4px rgba(29, 115, 219, 0.22);
+}
+
+/* Send button */
+.sendBtn {
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(180deg, #e50914, #b20710);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 140ms ease, filter 140ms ease;
+}
+
+.sendBtn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.sendBtn:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
