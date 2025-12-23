@@ -1,11 +1,10 @@
 "use client"
-type Role="user"|"assistant";
-type Message={
-  role: string;
-  content:string;
-}
+import { Message } from "@/types/chat";
+
 import styles from "@/app/chat/page.module.css"
+import { isDynamicPostpone } from "next/dist/server/app-render/dynamic-rendering";
 import { useState } from "react"
+import History from "@/components/chat/History";
 export default  function Chat(){
    const [prompt, setPrompt]= useState("");
    const [modelResponse,setModelResponse]=useState("");
@@ -25,7 +24,8 @@ try{    const response= await fetch("/api/chat",
 })
     const data=await response.json();
     setModelResponse(data.text)
-    setMessages((prev)=>[...prev,{role:"assistant",content: modelResponse }]);
+    console.log("console before appending the result",modelResponse)
+    setMessages((prev)=>[...prev,{role:"assistant",content:data.text }]);
     console.log(messages)
 }
 finally{setIsLoading(false);}
@@ -33,7 +33,8 @@ finally{setIsLoading(false);}
 
   }
 
-    return (
+    return (<div className={styles.page}>
+      <History></History>
   <div className={styles.holder}>
     <div className={styles.messages}>
       {messages.map((m, i) => (
@@ -66,7 +67,7 @@ finally{setIsLoading(false);}
         Send
       </button>
     </form>
-  </div>
+  </div> </div>
 );
 
 }

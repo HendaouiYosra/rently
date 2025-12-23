@@ -1,0 +1,50 @@
+/* Wrapper should NOT have a fixed width (so it can collapse when panel is hidden) */
+.historyWrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+    align-items: stretch;
+  background: #050507;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* The arrow button */
+.historyToggle {
+  width: 44px;
+  background: transparent;
+  border: 0;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* The actual panel (fixed sidebar width) */
+.historyPanel {
+  width: 280px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Title */
+.historyTitle {
+  margin: 0;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* List */
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.historyItem {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.90);
+}

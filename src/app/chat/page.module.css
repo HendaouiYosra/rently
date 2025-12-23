@@ -1,28 +1,44 @@
-/* ===== Page background ===== */
-.holder {
+/* Optional: if you already have a wrapper class (recommended) */
+.page {
   height: 100vh;
-  width: 80vw;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  background:
-    radial-gradient(900px 600px at 55% 35%, rgba(29, 115, 219, 0.18), transparent 60%),
-    radial-gradient(700px 500px at 65% 55%, rgba(229, 9, 20, 0.10), transparent 60%),
-    linear-gradient(180deg, #050507, #0b0b12);
+  overflow: hidden;
+  background: #0b0b0f;
   color: #eaeaf0;
-  padding: 20px;
 }
 
-/* ===== Messages container ===== */
+/* ===== Chat container (right side) ===== */
+.holder {
+  height: 100vh;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* important so messages can scroll */
+  background: #0b0b0f;
+  color: #eaeaf0;
+  padding: 0; /* remove big padding */
+}
+
+/* ===== Messages ===== */
 .messages {
   flex: 1;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: 6px 4px 18px;
+
+  /* center the chat column like the screenshot */
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+
+  /* top + bottom spacing (bottom leaves room for input bar) */
+  padding: 22px 18px 110px;
 }
 
-/* Scrollbar (subtle, premium) */
+/* Scrollbar (subtle) */
 .messages::-webkit-scrollbar {
   width: 8px;
 }
@@ -40,17 +56,13 @@
   max-width: 72%;
   padding: 12px 16px;
   border-radius: 18px 18px 4px 18px;
-  background: linear-gradient(
-    180deg,
-    rgba(29, 115, 219, 0.38),
-    rgba(29, 115, 219, 0.20)
-  );
-  border: 1px solid rgba(29, 115, 219, 0.35);
+
+  background: rgba(29, 115, 219, 0.22);
+  border: 1px solid rgba(29, 115, 219, 0.26);
   color: #ffffff;
+
   font-size: 14px;
   line-height: 1.4;
-  box-shadow: 0 10px 30px rgba(29, 115, 219, 0.22);
-  animation: fadeIn 160ms ease-out;
 }
 
 /* ===== Assistant message ===== */
@@ -59,47 +71,52 @@
   max-width: 72%;
   padding: 12px 16px;
   border-radius: 18px 18px 18px 4px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   color: #eaeaf0;
+
   font-size: 14px;
   line-height: 1.4;
-  backdrop-filter: blur(6px);
-  animation: fadeIn 160ms ease-out;
 }
 
-/* Small entrance animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== Input form ===== */
+/* ===== Input form (bottom, centered) ===== */
 .form {
+  /* stays at the bottom like the screenshot */
+  position: sticky;
+  bottom: 0;
+
   display: flex;
   gap: 10px;
-  padding-top: 14px;
+  justify-content: center;
+
+  padding: 18px 18px 22px;
+
+  /* fade like ChatGPT bottom bar */
+  background: linear-gradient(
+    180deg,
+    rgba(11, 11, 15, 0) 0%,
+    rgba(11, 11, 15, 0.85) 35%,
+    rgba(11, 11, 15, 1) 100%
+  );
+
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Input */
 .input {
-  flex: 1;
-  height: 46px;
+  width: 100%;
+  max-width: 760px;
+  height: 54px;
   padding: 0 14px;
+
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
+
   color: #ffffff;
   outline: none;
   font-size: 14px;
-  transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
 .input::placeholder {
@@ -107,30 +124,25 @@
 }
 
 .input:focus {
-  border-color: rgba(29, 115, 219, 0.6);
-  box-shadow: 0 0 0 4px rgba(29, 115, 219, 0.22);
+  border-color: rgba(255, 255, 255, 0.20);
 }
 
-/* Send button */
+/* Send button (simple dark icon button like the screenshot) */
 .sendBtn {
-  height: 46px;
-  padding: 0 18px;
+  width: 54px;
+  height: 54px;
   border-radius: 14px;
-  border: none;
-  background: linear-gradient(180deg, #e50914, #b20710);
-  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #eaeaf0;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
+
   cursor: pointer;
-  transition: transform 140ms ease, filter 140ms ease;
 }
 
 .sendBtn:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.1);
-}
-
-.sendBtn:active {
-  transform: translateY(0);
-  filter: brightness(0.95);
+  background: rgba(255, 255, 255, 0.12);
 }

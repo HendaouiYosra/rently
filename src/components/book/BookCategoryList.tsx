@@ -1,10 +1,4 @@
-type Book = {
-    key: string;
-  title: string;
-  author_name: string;
-  first_publish_year: string;
-  languages: string[];
-};
+import { Book } from "@/types/book";
 
 
 import BookCard from "./BookCard";
