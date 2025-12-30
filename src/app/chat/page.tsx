@@ -1,6 +1,7 @@
 "use client"
 import { Message } from "@/types/chat";
-
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import styles from "@/app/chat/page.module.css"
 import { isDynamicPostpone } from "next/dist/server/app-render/dynamic-rendering";
 import { useState } from "react"
@@ -45,8 +46,9 @@ finally{setIsLoading(false);}
               ? styles.userMessage
               : styles.assistantMessage
           }
-        >
+        > <ReactMarkdown remarkPlugins={[remarkGfm]}>
           {m.content}
+          </ReactMarkdown>
         </div>
       ))}
 

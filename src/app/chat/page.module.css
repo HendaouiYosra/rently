@@ -23,6 +23,7 @@
 
 /* ===== Messages ===== */
 .messages {
+  
   flex: 1;
   overflow-y: auto;
   display: flex;
@@ -31,7 +32,7 @@
 
   /* center the chat column like the screenshot */
   width: 100%;
-  max-width: 860px;
+
   margin: 0 auto;
 
   /* top + bottom spacing (bottom leaves room for input bar) */
