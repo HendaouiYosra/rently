@@ -17,9 +17,9 @@ return(<div className={styles.nav}>
   <img className={styles.logo}  src="/logo.png" alt="Logo" />
 
   <div className={styles.navigation}>
-    <a className={styles.link} href="">ChatBot</a>
-    <a className={styles.link} href="">Profile</a>
-    <a className={styles.link} href="">Home</a>
+    <a className={styles.link} href="/chat">ChatBot</a>
+    <a className={styles.link} href="/profile">Profile</a>
+    <a className={styles.link} href="/">Home</a>
     <a className={styles.link} href="">About</a>
 
     <DropdownMenu>

@@ -1,6 +1,6 @@
 /* Optional: if you already have a wrapper class (recommended) */
 .page {
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   display: flex;
   overflow: hidden;

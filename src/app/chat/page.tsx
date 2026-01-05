@@ -1,6 +1,7 @@
 "use client"
 import { Message } from "@/types/chat";
 import ReactMarkdown from "react-markdown";
+import Navbar from "@/components/navbar/navbar";
 import remarkGfm from "remark-gfm";
 import styles from "@/app/chat/page.module.css"
 import { isDynamicPostpone } from "next/dist/server/app-render/dynamic-rendering";
@@ -34,7 +35,12 @@ finally{setIsLoading(false);}
 
   }
 
-    return (<div className={styles.page}>
+    return (
+    <div >
+
+      <Navbar></Navbar>
+    <div className={styles.page}>
+      
       <History></History>
   <div className={styles.holder}>
     <div className={styles.messages}>
@@ -48,7 +54,7 @@ finally{setIsLoading(false);}
           }
         > <ReactMarkdown remarkPlugins={[remarkGfm]}>
           {m.content}
-          </ReactMarkdown>
+          </ReactMarkdown>b  
         </div>
       ))}
 
@@ -69,7 +75,7 @@ finally{setIsLoading(false);}
         Send
       </button>
     </form>
-  </div> </div>
+  </div> </div></div>
 );
 
 }
