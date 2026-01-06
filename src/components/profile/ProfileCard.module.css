@@ -88,3 +88,53 @@
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.12);
 }
+/* ===== Responsive ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .card {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .avatarWrap {
+    width: 104px;
+    height: 104px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .card {
+    border-radius: 16px;
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .avatarWrap {
+    width: 88px;
+    height: 88px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .description {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}

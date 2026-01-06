@@ -6,7 +6,20 @@ export default function ProfileCard(){
  const {user}=useUser();
     console.log(user);
   return  (
-    <div className="h-[100vh] overflow-y-auto overflow-x-hidden p-6 flex justify-center scrollbar-hide">
+    <div className="
+  h-[80vh]
+  w-full
+  max-w-[420px]
+  lg:max-w-[360px]
+  xl:max-w-[380px]
+  overflow-y-auto
+  overflow-x-hidden
+  p-4 sm:p-6
+  flex
+  justify-center
+  scrollbar-hide
+">
+
       <div className={styles.card}>
 
         <div className={styles.avatarWrap}>
