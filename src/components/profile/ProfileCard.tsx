@@ -48,6 +48,46 @@ export default function ProfileCard(){
             </span>
           ))}
         </div>
+<div className="w-full max-w-4xl flex flex-col items-start gap-3 ">
+  {/* Section title */}
+  <h2 className={styles.subtitle}>Highlights</h2>
+
+  {/* Highlight item */}
+  <div className="w-full flex items-center gap-3 py-4 border-b border-white/10">
+    <img
+      className="w-12 h-12 rounded-full object-cover"
+      src="logo.png"
+      alt=""
+    />
+
+    <p className={styles.highlightTitle}>
+      Title of the book
+    </p>
+  </div>
+  <div className="w-full flex items-center gap-3 py-4 border-b border-white/10">
+    <img
+      className="w-12 h-12 rounded-full object-cover"
+      src="logo.png"
+      alt=""
+    />
+
+    <p className={styles.highlightTitle}>
+      Title of the book
+    </p>
+  </div><div className="w-full flex items-center gap-3 py-4 border-b border-white/10">
+    <img
+      className="w-12 h-12 rounded-full object-cover"
+      src="logo.png"
+      alt=""
+    />
+
+    <p className={styles.highlightTitle}>
+      Title of the book
+    </p>
+  </div>
+</div>
+
+
 
       </div>
     </div>
