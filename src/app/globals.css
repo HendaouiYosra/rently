@@ -16,13 +16,12 @@ body {
   overflow: hidden;
 }
 .title {
-  margin: 0;
-  font-size: 58px;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  color: #fff;
-  text-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 6px;
 }
+
 .app-container {
  
  
